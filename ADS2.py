@@ -21,5 +21,6 @@ print(df_ads2_t)
 # total rows and columns
 #df_ads2.shape
 
+#Remove Columns based on Column Index
 df_ads2.drop(df_ads2.columns[[1,3]], axis=1)
 
