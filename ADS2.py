@@ -10,17 +10,17 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import scipy as sc
 
-df_ads2 = pd.read_csv("ads2.csv")
-print(df_ads2)
-print()
-print(df_ads2.describe())
+#defining the function for loading filename as argument
+def loadfile(filename):
+   df_x = pd.read_csv(filename,skiprows = 3)
+   df_x = df_x.iloc[[4,14,21,37],[0,52,53,54,55]]
+   df_x = df_x.reset_index(drop=True)
+   df_y = df_x.T
+   print(df_x)
+   print(df_y)
+   return df_x, df_y
 
-df_ads2_t = pd.DataFrame.transpose(df_ads2)
-print(df_ads2_t)
+df1, df11 = loadfile('Total green house gas emissions.csv')
 
-# total rows and columns
-#df_ads2.shape
-
-#Remove Columns based on Column Index
-df_ads2.drop(df_ads2.columns[[1,3]], axis=1)
-
+df1.plot()
+df1.plot(kind='bar')
