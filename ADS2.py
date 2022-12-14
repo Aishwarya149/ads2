@@ -39,18 +39,25 @@ print(df1.describe())
     
 # Bar plot
 """
+plt.tight_layout(): used to automatically adjust subplot parameters to give specified padding
 legend: to show the index value on the graph
 title: assigning title for the graph
 savefig: saving the visualised data in a png format
 show: to show the visualisation of given data
 """
 df1.plot(kind='bar',x='Country')
+plt.tight_layout()
 plt.legend()
 plt.xlabel('Country')
 plt.ylabel('Values')
 plt.title('Green House gas emissions over the years')
 plt.savefig('Green House gas emissions over the years barplot.png')
 plt.show()
+
+print("Pearsons correlations")
+print(df1.corr())
+print("Kendall correlations")
+print(df1.corr(method="kendall"))
 
 #Pie chart
 """
@@ -201,7 +208,7 @@ def Line_plot():
     plt.legend(loc='upper right')
     plt.title('Green house gas emission of various countries')
     plt.xlabel('Years')
-    plt.ylabel('Total Green house gas emission')
+    plt.ylabel('Total Green house gas emission values')
     plt.savefig('lineplot.png')
     plt.show()
 
