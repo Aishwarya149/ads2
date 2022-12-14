@@ -52,11 +52,6 @@ plt.title('Green House gas emissions over the years')
 plt.savefig('Green House gas emissions over the years barplot.png')
 plt.show()
 
-print("Pearsons correlations")
-print(df1.corr())
-print("Kendall correlations")
-print(df1.corr(method="kendall"))
-
 #Pie chart
 """
 labels: list of labels of same length
